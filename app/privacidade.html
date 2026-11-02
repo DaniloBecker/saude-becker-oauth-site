@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Tratamento de dados pessoais e de saúde no aplicativo Saúde Becker.">
+<title>Política de Privacidade — Saúde Becker</title>
+<style>:root{color-scheme:light;--ink:#15263c;--muted:#4b6074;--line:#dfe7ee;--accent:#1769aa;--bg:#f5f8fb}*{box-sizing:border-box}body{margin:0;font:16px/1.72 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}header{background:#11283e;color:#fff;padding:1rem max(1.25rem,calc((100vw - 820px)/2));}header a{color:#fff;text-decoration:none;font-weight:650}main{max-width:860px;margin:2rem auto;padding:2.25rem 2.4rem;background:#fff;border:1px solid var(--line);border-radius:14px}h1{font-size:2rem;line-height:1.2}h2{font-size:1.16rem;margin-top:2rem}h3{font-size:1rem}p,li{max-width:76ch}p,li{color:var(--muted)}a{color:var(--accent)}a:focus-visible{outline:3px solid #e49a33;outline-offset:3px}.meta{font-size:.9rem;color:var(--muted)}.note{border-left:4px solid #1769aa;background:#f0f6fb;padding:.65rem 1rem}nav{display:flex;flex-wrap:wrap;gap:1rem;font-size:.92rem;margin-top:.5rem}footer{max-width:860px;margin:1rem auto 3rem;padding:0 1rem;color:var(--muted);font-size:.88rem}@media(max-width:700px){main{border:0;border-radius:0;margin:0;padding:1.4rem 1.15rem}h1{font-size:1.65rem}}</style>
+</head>
+<body>
+<header><a href="https://saudebecker.is-a.dev/">Saúde Becker</a><nav aria-label="Documentos legais do aplicativo"><a href="/app/privacidade.html">Política de Privacidade do aplicativo</a><a href="/app/termos.html">Termos de Uso do aplicativo</a></nav></header>
+<main>
+
+<h1>Política de Privacidade — aplicativo Saúde Becker</h1>
+<p class="meta">Publicada em 2 de novembro de 2026 · Versão 1.0 · Idioma: português brasileiro</p>
+<p>Esta política descreve o tratamento de dados relacionado ao aplicativo privado <strong>Saúde Becker</strong>, pacote Android <code>br.com.familiabecker.saude</code>, e distingue as funções atuais de integrações ainda planejadas.</p>
+<h2>1. Responsável e contato</h2>
+<p>Responsável pelo projeto: <strong>Danilo Becker</strong>. Para dúvidas sobre privacidade e solicitações relativas aos dados tratados nesta instância, escreva para <a href="mailto:danilobecker@hotmail.com">danilobecker@hotmail.com</a>. Esta política não se refere ao produto independente “Saúde Becker OAuthReader”.</p>
+<h2>2. Como o aplicativo funciona hoje</h2>
+<p>O aplicativo Saúde Becker é uma interface privada para consultar informações de saúde da família registradas na <strong>Base Mestre de Saúde — Família Becker</strong>, mantida no Google Sheets. A versão Android existente utiliza autorização da conta Google para leitura dos intervalos autorizados da planilha; o acesso é restrito às contas e aos perfis familiares permitidos.</p>
+<p>A Base Mestre pode incluir peso e composição corporal, atividade e exercícios, sono, sinais fisiológicos, histórico de exames, medicamentos, gestação e outros registros incluídos ou autorizados pelo responsável. A presença de uma categoria na Base não significa que ela seja coletada automaticamente de todos os fornecedores.</p>
+<h2>3. Integração Huawei Health — planejada, ainda não ativa</h2>
+<p class="note"><strong>Estado:</strong> a integração automática Huawei Health / Health Service Kit ainda está em desenvolvimento. Sua implementação depende de aprovação das permissões pela Huawei, autorização do titular e testes de leitura reais. O aplicativo atualmente não realiza importação automática aprovada da Huawei.</p>
+<p>Se habilitada futuramente, essa integração poderá <strong>ler</strong>, quando disponíveis e autorizados, passos, distância, calorias de atividade, resumo diário, registros de exercícios, peso ou composição corporal, frequência cardíaca, sono, estresse, saturação de oxigênio (SpO₂) e temperatura. A disponibilidade de VFC/HRV e de cada medida será confirmada pelas permissões e pela API realmente liberadas. Nem tudo que aparece no aplicativo Huawei Health necessariamente é exposto à API.</p>
+<p>O fluxo previsto é: Huawei Health → coletor de leitura autorizado → validação pelo Single Gate do Saúde Becker → Base Mestre. Nesta etapa não se pretende gravar dados na Huawei nem enviar treinos ao relógio. Localização/GPS, dados reprodutivos, notificações, contatos e categorias não necessárias não integram o escopo inicial.</p>
+<h2>4. Finalidades e autorização</h2>
+<p>Os dados são usados para organizar registros, apresentar históricos e tendências, conferir a procedência das medições, corrigir inconsistências, evitar duplicidades e permitir consultas solicitadas pelo usuário. Informações de saúde são dados pessoais sensíveis. Quando aplicável, o tratamento observa as bases legais da legislação brasileira, inclusive a LGPD.</p>
+<p>A importação Huawei, se disponibilizada, dependerá de autorização específica e informada e poderá ser revogada pelo titular na plataforma correspondente. O simples login em um serviço não é considerado autorização para importar todos os dados.</p>
+<h2>5. Serviços externos e compartilhamento</h2>
+<p>O Google fornece autenticação e a infraestrutura do Google Sheets utilizada pela Base Mestre. A Huawei será uma fonte opcional de dados somente se a integração vier a ser habilitada. Ferramentas de inteligência artificial ou outros serviços conectados podem ser usados pelo responsável para análises solicitadas separadamente; a instalação do aplicativo não significa envio automático de todos os dados clínicos a uma IA.</p>
+<p>O responsável não comercializa os dados de saúde da instância familiar para publicidade. Serviços externos podem realizar tratamento ou transferências internacionais segundo suas próprias condições e as salvaguardas legais aplicáveis; esta página não afirma que todos os dados permanecem exclusivamente no Brasil.</p>
+<h2>6. Segurança e perfis familiares</h2>
+<p>O código Android atual usa autorização Google de leitura, desativa o backup Android do aplicativo e impede tráfego HTTP em texto simples. O aplicativo não implementa banco local persistente de dados clínicos nem telemetria clínica, conforme o projeto-fonte atualmente documentado. Esses mecanismos reduzem riscos, mas não constituem garantia absoluta de segurança.</p>
+<p>O aplicativo diferencia os perfis autorizados para evitar associação indevida de registros. A integração Huawei planejada deve validar a conta, a pessoa de destino e a origem antes de admitir registros na Base Mestre, preservando histórico e rastreabilidade.</p>
+<h2>7. Conservação, acesso e eliminação</h2>
+<p>A Base Mestre mantém um histórico longitudinal de saúde. Registros são conservados enquanto necessários às finalidades legítimas de acompanhamento histórico, integridade e eventuais obrigações aplicáveis, com revisão de necessidade e possibilidade de solicitações de correção ou eliminação. Não se declara um prazo fixo universal de retenção. A opção de consultar até um ano de histórico na Huawei, se autorizada, define somente o alcance da consulta à fonte, não o prazo de armazenamento na Base.</p>
+<p>Mediante o contato indicado, o titular ou seu representante pode solicitar, conforme a legislação aplicável, confirmação de tratamento, acesso, correção, informação sobre compartilhamento, revogação de consentimento, portabilidade quando cabível ou eliminação. A revogação da Huawei impede novas leituras, mas não elimina automaticamente cópias importadas; pedidos relativos às cópias existentes exigem tratamento específico.</p>
+<h2>8. Crianças e adolescentes</h2>
+<p>O acesso e o tratamento de registros de menores dependem da autorização e atuação de seus representantes legais, observando seu melhor interesse. Não se deve associar dados de uma pessoa ao perfil de outra.</p>
+<h2>9. Informação médica e uso de IA</h2>
+<p>O Saúde Becker é uma ferramenta de organização e visualização de informações. Não substitui atendimento médico, diagnóstico, prescrição ou assistência de emergência. Medidas de dispositivos e análises automatizadas podem apresentar erros ou diferenças de metodologia.</p>
+<h2>10. Alterações</h2>
+<p>Alterações materiais nas fontes, categorias, finalidades ou destinatários serão refletidas nesta página. Quando necessário, será solicitada nova autorização. O canal de contato permanece <a href="mailto:danilobecker@hotmail.com">danilobecker@hotmail.com</a>.</p>
+<p><a href="/app/termos.html">Consultar Termos de Uso do aplicativo</a></p>
+
+</main>
+<footer>Saúde Becker · Aplicativo pessoal Android · <a href="mailto:danilobecker@hotmail.com">Contato</a>. Estas páginas dizem respeito ao aplicativo Saúde Becker, não ao utilitário técnico OAuthReader.</footer>
+</body>
+</html>
