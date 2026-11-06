@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>Saúde Becker</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0F5FD7">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Saúde Becker">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <style>
+    html, body { margin: 0; height: 100%; background: #0F5FD7; overflow: hidden; overscroll-behavior: none; }
+    #composeRoot { position: fixed; inset: 0; }
+    #loading { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font: 16px -apple-system, system-ui, sans-serif; text-align: center; padding: 24px; }
+  </style>
+  <script>
+    // Google's login window. The token stays in the app's memory, is read-only, and is never written anywhere.
+    window.SAUDE_CLIENT_ID = '1079136587798-kqc8tti81q49bfjb4oot0m93l8kejjtf.apps.googleusercontent.com';
+    window.saudeRequestToken = function (scope, done) {
+      var finished = false;
+      var finish = function (token, seconds) { if (!finished) { finished = true; done(token, seconds); } };
+      if (!window.google || !google.accounts || !google.accounts.oauth2 || !window.SAUDE_CLIENT_ID) { finish(null, 0); return; }
+      google.accounts.oauth2.initTokenClient({
+        client_id: window.SAUDE_CLIENT_ID,
+        scope: scope,
+        callback: function (r) { finish(r && r.access_token ? r.access_token : null, r ? Number(r.expires_in) || 3600 : 0); },
+        error_callback: function () { finish(null, 0); }
+      }).requestAccessToken({ prompt: '' });
+    };
+  </script>
+  <script src="https://accounts.google.com/gsi/client" async></script>
+</head>
+<body>
+  <div id="composeRoot"></div>
+  <div id="loading">Carregando…</div>
+  <script>
+    // The app draws inside a shadow root; the message leaves as soon as it appears.
+    (function () {
+      var original = Element.prototype.attachShadow;
+      Element.prototype.attachShadow = function (options) {
+        var root = original.call(this, options);
+        var box = document.getElementById('loading');
+        if (box) box.remove();
+        return root;
+      };
+      if (typeof WebAssembly === 'undefined' || !WebAssembly.validate(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 5, 1, 95, 1, 120, 0]))) {
+        document.getElementById('loading').textContent = 'Este aparelho precisa de um iOS mais novo para abrir o app.';
+      }
+    })();
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
